@@ -19,15 +19,6 @@ public class LuceneIndexServiceTest {
     @Autowired
     private LuceneIndexService luceneIndexService;
 
-/*    @BeforeEach
-    public void setUp() {
-        luceneIndexService.init();
-    }*/
-/*
-    @AfterEach
-    public void tearDown() {
-        luceneIndexService.close();
-    }*/
 
     @Test
     public void testUpdateAndSearchDocuments() {
