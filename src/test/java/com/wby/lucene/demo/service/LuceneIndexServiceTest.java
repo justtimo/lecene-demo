@@ -36,11 +36,10 @@ public class LuceneIndexServiceTest {
 
         luceneIndexService.updateDocuments(Arrays.asList(doc1, doc2));
 
-        List<Document> results = luceneIndexService.searchDocuments("Lucene", 0, 10);
+        List<Document> results = luceneIndexService.searchDocuments("Lucene", Arrays.asList("published", "draft"), 1627849200000L, 1627935600000L, 0, 10);
         assertEquals(2, results.size());
 
-        Query query = LongPoint.newRangeQuery("time", 1627849200000L, 1627935600000L);
-        int count = luceneIndexService.countDocuments(query);
+        int count = luceneIndexService.countDocuments("Lucene", Arrays.asList("published", "draft"), 1627849200000L, 1627935600000L);
         assertEquals(2, count);
     }
 }
